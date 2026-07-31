@@ -6,500 +6,237 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Charlotte ❤️</title>
+<title>For Charlotte ❤️</title>
 
 <style>
-
-/* RESET */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:'Segoe UI', sans-serif;
 }
-
-
-/* BODY */
 
 body{
-
-    background:linear-gradient(135deg,#ff4d6d,#ff758f);
-    height:100vh;
     overflow:hidden;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    height:100vh;
+}
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
 
+/* Floating Hearts */
+
+.heart{
+    position:absolute;
+    bottom:-50px;
     color:white;
-    text-align:center;
+    font-size:25px;
+    animation:float 8s linear infinite;
+    opacity:0.8;
+}
+
+@keyframes float{
+
+0%{
+    transform:translateY(0) rotate(0deg);
+}
+
+100%{
+    transform:translateY(-120vh) rotate(360deg);
+}
 
 }
 
 
-/* INTRO SCREEN */
+/* Screens */
 
-#intro{
+.screen{
 
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100%;
-
-    background:#ff4d6d;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-    align-items:center;
-
-    z-index:9999;
+height:100vh;
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+position:absolute;
+transition:1s;
 
 }
 
 
-#intro h1{
+.hidden{
 
-    font-size:34px;
-    margin-bottom:20px;
-
-}
-
-
-#intro p{
-
-    font-size:22px;
-
-    animation:blink 1s infinite;
+opacity:0;
+pointer-events:none;
+transform:scale(0.8);
 
 }
 
 
-@keyframes blink{
-
-    50%{
-
-        opacity:0;
-
-    }
-
-}
-
-
-/* MAIN PAGE */
-
-#main{
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    flex-direction:column;
-
-}
-
+/* Intro */
 
 h1{
 
-    font-size:3rem;
-
-    margin-bottom:40px;
-
-    text-shadow:0 0 20px white;
-
-}
-
-
-/* BUTTON AREA */
-
-.buttons{
-
-    position:relative;
-
-    width:350px;
-    height:200px;
+color:white;
+font-size:35px;
+margin-bottom:30px;
 
 }
 
 
 button{
 
-    padding:15px 35px;
+border:none;
+padding:15px 35px;
+border-radius:50px;
+font-size:20px;
+cursor:pointer;
+background:white;
+color:#ff4b6e;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
 
-    font-size:24px;
-
-    border:none;
-
-    border-radius:50px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-
-/* YES BUTTON */
-
-#yes{
-
-    background:#ff1744;
-
-    color:white;
-
-    box-shadow:0 0 20px white;
+transition:0.3s;
 
 }
 
 
-#yes:hover{
+button:hover{
 
-    transform:scale(1.1);
-
-}
-
-
-/* NO BUTTON */
-
-#no{
-
-    background:white;
-
-    color:#ff1744;
-
-    position:absolute;
-
-    left:200px;
-
-    top:0;
+transform:scale(1.1);
 
 }
 
 
-/* RESULT PAGE */
+/* Love Question */
 
-#result{
 
-    display:none;
+#question{
 
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    height:100vh;
+font-size:38px;
 
 }
 
 
-#result h2{
+#buttons{
 
-    font-size:48px;
-
-    margin-bottom:20px;
-
-}
-
-
-#result p{
-
-    font-size:22px;
-
-    margin-bottom:30px;
-
-    max-width:700px;
-
-    padding:0 20px;
-
-    line-height:1.8;
+margin-top:40px;
+display:flex;
+gap:30px;
 
 }
 
 
-/* SONG BUTTON */
+#yesBtn{
 
-.song{
-
-    background:white;
-
-    color:#ff1744;
-
-    padding:15px 35px;
-
-    border-radius:40px;
-
-    text-decoration:none;
-
-    font-size:22px;
-
-    font-weight:bold;
+background:#ff4b6e;
+color:white;
 
 }
 
 
-/* HEART ANIMATION */
+#noBtn{
 
-.heart{
-
-    position:absolute;
-
-    color:#ff1744;
-
-    font-size:20px;
-
-    animation:fall linear infinite;
+background:white;
+position:absolute;
 
 }
 
 
-@keyframes fall{
+/* Letter */
 
-    0%{
+.letter{
 
-        transform:translateY(-100px);
+background:white;
+width:90%;
+max-width:600px;
+padding:30px;
+border-radius:25px;
+box-shadow:0 10px 40px rgba(0,0,0,0.2);
 
-        opacity:1;
-
-    }
-
-
-    100%{
-
-        transform:translateY(110vh);
-
-        opacity:0;
-
-    }
+font-size:18px;
+line-height:1.7;
+color:#555;
 
 }
 
+
+.title{
+
+font-size:35px;
+color:white;
+margin-bottom:20px;
+
+}
+
+
+/* Final */
+
+.finalText{
+
+font-size:40px;
+color:white;
+
+}
+
+
+#musicBtn{
+
+margin-top:30px;
+
+}
+
+
+@media(max-width:600px){
+
+h1{
+font-size:28px;
+}
+
+
+#question{
+font-size:30px;
+}
+
+
+.finalText{
+font-size:32px;
+}
+
+
+.letter{
+font-size:16px;
+}
+
+}
 
 </style>
 
 </head>
+
+
 <body>
 
 
-<!-- INTRO SCREEN -->
+<!-- Floating Hearts -->
 
-<div id="intro">
-
-    <h1>
-        A little surprise is waiting for Charlotte... ❤️
-    </h1>
-
-    <p>
-        Loading...
-    </p>
-
-</div>
+<div class="heart" style="left:10%;animation-delay:0s;">❤️</div>
+<div class="heart" style="left:30%;animation-delay:2s;">💖</div>
+<div class="heart" style="left:50%;animation-delay:4s;">💕</div>
+<div class="heart" style="left:70%;animation-delay:1s;">❤️</div>
+<div class="heart" style="left:90%;animation-delay:3s;">💗</div>
 
 
+<!-- Intro Screen -->
 
-<!-- MAIN PAGE -->
+<div class="screen" id="intro">
 
-<div id="main">
+<h1>
+A little surprise is waiting for Charlotte... ❤️
+</h1>
 
-    <h1>
-        ❤️ Do You Love Me? Charlotte ❤️
-    </h1>
-
-
-    <div class="buttons">
-
-
-        <button id="yes" onclick="yesClicked()">
-            YES ❤️
-        </button>
-
-
-        <button id="no" onmouseover="moveNo()">
-            NO 😢
-        </button>
-
-
-    </div>
-
+<button onclick="startLove()">
+Start Surprise 💝
+</button>
 
 </div>
-<!-- RESULT PAGE -->
-
-<div id="result">
-
-    <h2>
-        ❤️ Happy National Girlfriend Day ❤️
-        <br>
-        Charlotte (My Love)
-    </h2>
-
-
-    <p>
-
-        My Dearest Charlotte (My Love),
-
-        <br><br>
-
-        Happy National Girlfriend Day! ❤️
-
-        <br><br>
-
-        From the moment you came into my life,
-        everything became brighter.
-
-        <br><br>
-
-        Thank you for making my life brighter
-        and filling my heart with a love I never knew I needed.
-
-        <br><br>
-
-        You are my peace, my happiness,
-        and the most beautiful part of my life.
-
-        <br><br>
-
-        No matter where life takes us,
-        my heart will always choose you.
-
-        <br><br>
-
-        Every day with you is my favorite day,
-        and every moment with you is a memory I'll always treasure.
-
-        <br><br>
-
-        I will love you today, tomorrow, and forever.
-
-        <br><br>
-
-        Forever yours,
-
-        <br><br>
-
-        ❤️
-
-    </p>
-
-
-
-    <a class="song"
-    href="https://youtu.be/GxldQ9eX2wo"
-    target="_blank">
-
-        🎵 Play Our Song
-
-    </a>
-
-
-</div>
-<script>
-
-
-// INTRO LOADING
-
-window.onload = function(){
-
-    setTimeout(function(){
-
-        document.getElementById("intro").style.display="none";
-
-    },2500);
-
-};
-
-
-
-// NO BUTTON MOVE
-
-let yesSize = 24;
-
-
-function moveNo(){
-
-    const btn = document.getElementById("no");
-
-
-    btn.style.left =
-    Math.random()*250 + "px";
-
-
-    btn.style.top =
-    Math.random()*120 + "px";
-
-
-    yesSize += 12;
-
-
-    document.getElementById("yes").style.fontSize =
-    yesSize + "px";
-
-}
-
-
-
-
-// YES BUTTON CLICK
-
-function yesClicked(){
-
-    document.getElementById("main").style.display="none";
-
-
-    document.getElementById("result").style.display="flex";
-
-}
-
-
-
-
-// HEART CREATION
-
-for(let i=0;i<80;i++){
-
-
-    let heart=document.createElement("div");
-
-
-    heart.className="heart";
-
-
-    heart.innerHTML="❤";
-
-
-    heart.style.left =
-    Math.random()*100+"vw";
-
-
-    heart.style.animationDuration =
-    (3+Math.random()*5)+"s";
-
-
-    heart.style.fontSize =
-    (15+Math.random()*35)+"px";
-
-
-    heart.style.animationDelay =
-    Math.random()*5+"s";
-
-
-    document.body.appendChild(heart);
-
-
-}
-
-
-</script>
-
-
-</body>
-
-</html>
