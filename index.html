@@ -1,216 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Do You Love Me?</title>
+
+<title>Charlotte ❤️</title>
 
 <style>
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#ff4d6d,#ff758f);
-height:100vh;
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-color:white;
-text-align:center;
+
+    background:linear-gradient(135deg,#ff4d6d,#ff758f);
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    text-align:center;
+
 }
+
+
+/* INTRO SCREEN */
+
+#intro{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:#ff4d6d;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+
+#intro h1{
+
+    font-size:34px;
+    margin-bottom:20px;
+
+}
+
+
+#intro p{
+
+    font-size:22px;
+    animation:blink 1s infinite;
+
+}
+
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* MAIN PAGE */
+
+#main{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+}
+
 
 h1{
-font-size:3rem;
-margin-bottom:40px;
-text-shadow:0 0 20px white;
+
+    font-size:3rem;
+    margin-bottom:40px;
+    text-shadow:0 0 20px white;
+
 }
+
 
 .buttons{
-position:relative;
-width:350px;
-height:200px;
+
+    position:relative;
+    width:350px;
+    height:200px;
+
 }
+
 
 button{
-padding:15px 35px;
-font-size:24px;
-border:none;
-border-radius:50px;
-cursor:pointer;
-transition:.3s;
+
+    padding:15px 35px;
+    font-size:24px;
+
+    border:none;
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
 }
+
 
 #yes{
-background:#ff1744;
-color:white;
-box-shadow:0 0 20px white;
+
+    background:#ff1744;
+    color:white;
+
+    box-shadow:0 0 20px white;
+
 }
+
 
 #yes:hover{
-transform:scale(1.1);
+
+    transform:scale(1.1);
+
 }
+
 
 #no{
-background:white;
-color:#ff1744;
-position:absolute;
-left:200px;
-top:0;
-}
 
-.heart{
-position:absolute;
-color:#ff1744;
-font-size:20px;
-animation:fall linear infinite;
-}
+    background:white;
+    color:#ff1744;
 
-@keyframes fall{
-0%{
-transform:translateY(-100px);
-opacity:1;
-}
-100%{
-transform:translateY(110vh);
-opacity:0;
-}
-}
+    position:absolute;
 
-#result{
-display:none;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-height:100vh;
-}
-
-#result h2{
-font-size:48px;
-margin-bottom:20px;
-}
-
-#result p{
-font-size:22px;
-margin-bottom:30px;
-max-width:700px;
-padding:0 20px;
-line-height:1.8;
-}
-
-.song{
-background:white;
-color:#ff1744;
-padding:15px 35px;
-border-radius:40px;
-text-decoration:none;
-font-size:22px;
-font-weight:bold;
-}
-</style>
-</head>
-
-<body>
-
-<div id="main">
-
-<h1>❤️ Do You Love Me? Charlotte ❤️</h1>
-
-<div class="buttons">
-
-<button id="yes" onclick="yesClicked()">YES ❤️</button>
-
-<button id="no" onmouseover="moveNo()">NO 😢</button>
-
-</div>
-
-</div><div id="result">
-
-<h2>❤️ Happy National Girlfriend Day ❤️
-<br>Charlotte(My Love)</h2>
-
-<p>
-From the moment I met you,<br><br>
-
-You became the most beautiful part of my life.
-Thank you for always making me smile and for staying by my side.
-
-<br><br>
-
-I don't know what the future holds,
-but I know one thing...
-
-<br><br>
-
-❤️ I will always love you. ❤️
-</p>
-
-<a class="song"
-href="https://youtu.be/GxldQ9eX2wo"
-target="_blank">
-
-🎵 Play Our Song
-
-</a>
-
-</div>
-
-<script>
-
-let yesSize = 24;
-
-function moveNo(){
-
-const btn = document.getElementById("no");
-
-btn.style.left =
-Math.random()*250 + "px";
-
-btn.style.top =
-Math.random()*120 + "px";
-
-yesSize += 8;
-
-document.getElementById("yes").style.fontSize =
-yesSize + "px";
+    left:200px;
+    top:0;
 
 }
-
-function yesClicked(){
-
-document.getElementById("main").style.display="none";
-
-document.getElementById("result").style.display="flex";
-
-}for(let i=0;i<80;i++){
-
-let heart=document.createElement("div");
-
-heart.className="heart";
-
-heart.innerHTML="❤";
-
-heart.style.left=Math.random()*100+"vw";
-
-heart.style.animationDuration=
-(3+Math.random()*5)+"s";
-
-heart.style.fontSize=
-(15+Math.random()*35)+"px";
-
-heart.style.animationDelay=
-Math.random()*5+"s";
-
-document.body.appendChild(heart);
-
-}
-
-</script>
-
-</body>
-</html>
