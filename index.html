@@ -240,3 +240,249 @@ Start Surprise 💝
 </button>
 
 </div>
+<!-- Love Question Screen -->
+
+<div class="screen hidden" id="questionPage">
+
+<h1 id="question">
+Do You Love Me, Charlotte? ❤️
+</h1>
+
+
+<div id="buttons">
+
+<button id="yesBtn" onclick="yesClick()">
+YES ❤️
+</button>
+
+
+<button id="noBtn">
+NO 😢
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- Love Letter Screen -->
+
+<div class="screen hidden" id="letterPage">
+
+
+<div class="title">
+For My Dearest Charlotte 🌹
+</div>
+
+
+<div class="letter">
+
+<p>
+
+My Dearest Charlotte (My Love),
+
+<br><br>
+
+Happy National Girlfriend Day! ❤️
+
+<br><br>
+
+From the moment you came into my life, everything became brighter.
+
+<br><br>
+
+Thank you for making my life brighter and filling my heart with a love I never knew I needed.
+
+<br><br>
+
+You are my peace, my happiness, and the most beautiful part of my life.
+
+<br><br>
+
+No matter where life takes us, my heart will always choose you.
+
+<br><br>
+
+Every day with you is my favorite day, and every moment with you is a memory I'll always treasure.
+
+<br><br>
+
+I love you today, tomorrow, and forever.
+
+<br><br>
+
+Forever yours,
+
+<br><br>
+
+❤️
+
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+<!-- Final Screen -->
+
+
+<div class="screen hidden" id="finalPage">
+
+
+<div class="finalText">
+
+Happy National Girlfriend Day,
+<br>
+Charlotte ❤️
+
+</div>
+
+
+<button id="musicBtn" onclick="playSong()">
+
+🎵 Play Our Song
+
+</button>
+
+
+</div>
+
+
+
+<!-- Music -->
+
+<audio id="song">
+
+<source src="our-song.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+
+<script>
+
+
+function startLove(){
+
+document.getElementById("intro")
+.classList.add("hidden");
+
+
+document.getElementById("questionPage")
+.classList.remove("hidden");
+
+}
+
+
+
+
+// No Button Run Away
+
+
+let noBtn=document.getElementById("noBtn");
+
+
+noBtn.addEventListener("mouseover",moveNo);
+
+noBtn.addEventListener("touchstart",moveNo);
+
+
+
+function moveNo(){
+
+let x=Math.random()*
+(window.innerWidth-120);
+
+let y=Math.random()*
+(window.innerHeight-80);
+
+
+noBtn.style.left=x+"px";
+
+noBtn.style.top=y+"px";
+
+}
+
+
+
+
+// Yes Button
+
+
+let size=20;
+
+
+function yesClick(){
+
+
+size+=10;
+
+
+document.getElementById("yesBtn")
+.style.fontSize=size+"px";
+
+
+document.getElementById("yesBtn")
+.style.padding=(size/2)+"px "+size+"px";
+
+
+
+if(size>=60){
+
+
+document.getElementById("questionPage")
+.classList.add("hidden");
+
+
+
+document.getElementById("letterPage")
+.classList.remove("hidden");
+
+
+setTimeout(()=>{
+
+
+document.getElementById("letterPage")
+.classList.add("hidden");
+
+
+document.getElementById("finalPage")
+.classList.remove("hidden");
+
+
+},8000);
+
+
+}
+
+
+}
+
+
+
+
+// Music Button
+
+
+function playSong(){
+
+let song=document.getElementById("song");
+
+song.play();
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
