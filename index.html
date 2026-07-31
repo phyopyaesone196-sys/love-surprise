@@ -331,3 +331,175 @@ button{
 
 
 </div>
+<!-- RESULT PAGE -->
+
+<div id="result">
+
+    <h2>
+        ❤️ Happy National Girlfriend Day ❤️
+        <br>
+        Charlotte (My Love)
+    </h2>
+
+
+    <p>
+
+        My Dearest Charlotte (My Love),
+
+        <br><br>
+
+        Happy National Girlfriend Day! ❤️
+
+        <br><br>
+
+        From the moment you came into my life,
+        everything became brighter.
+
+        <br><br>
+
+        Thank you for making my life brighter
+        and filling my heart with a love I never knew I needed.
+
+        <br><br>
+
+        You are my peace, my happiness,
+        and the most beautiful part of my life.
+
+        <br><br>
+
+        No matter where life takes us,
+        my heart will always choose you.
+
+        <br><br>
+
+        Every day with you is my favorite day,
+        and every moment with you is a memory I'll always treasure.
+
+        <br><br>
+
+        I will love you today, tomorrow, and forever.
+
+        <br><br>
+
+        Forever yours,
+
+        <br><br>
+
+        ❤️
+
+    </p>
+
+
+
+    <a class="song"
+    href="https://youtu.be/GxldQ9eX2wo"
+    target="_blank">
+
+        🎵 Play Our Song
+
+    </a>
+
+
+</div>
+<script>
+
+
+// INTRO LOADING
+
+window.onload = function(){
+
+    setTimeout(function(){
+
+        document.getElementById("intro").style.display="none";
+
+    },2500);
+
+};
+
+
+
+// NO BUTTON MOVE
+
+let yesSize = 24;
+
+
+function moveNo(){
+
+    const btn = document.getElementById("no");
+
+
+    btn.style.left =
+    Math.random()*250 + "px";
+
+
+    btn.style.top =
+    Math.random()*120 + "px";
+
+
+    yesSize += 12;
+
+
+    document.getElementById("yes").style.fontSize =
+    yesSize + "px";
+
+}
+
+
+
+
+// YES BUTTON CLICK
+
+function yesClicked(){
+
+    document.getElementById("main").style.display="none";
+
+
+    document.getElementById("result").style.display="flex";
+
+}
+
+
+
+
+// HEART CREATION
+
+for(let i=0;i<80;i++){
+
+
+    let heart=document.createElement("div");
+
+
+    heart.className="heart";
+
+
+    heart.innerHTML="❤";
+
+
+    heart.style.left =
+    Math.random()*100+"vw";
+
+
+    heart.style.animationDuration =
+    (3+Math.random()*5)+"s";
+
+
+    heart.style.fontSize =
+    (15+Math.random()*35)+"px";
+
+
+    heart.style.animationDelay =
+    Math.random()*5+"s";
+
+
+    document.body.appendChild(heart);
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
