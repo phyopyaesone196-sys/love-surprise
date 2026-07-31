@@ -52,14 +52,13 @@ transition:1s;
 
 opacity:0;
 pointer-events:none;
-transform:scale(.7);
+transform:scale(.8);
 
 }
 
 
 
-/* Text */
-
+/* Title */
 
 h1{
 
@@ -70,14 +69,12 @@ text-shadow:0 5px 20px rgba(0,0,0,.2);
 }
 
 
-/* Buttons */
-
+/* Button */
 
 button{
 
-margin-top:30px;
-
 padding:15px 35px;
+margin-top:25px;
 
 border:none;
 
@@ -85,11 +82,11 @@ border-radius:50px;
 
 font-size:20px;
 
+cursor:pointer;
+
 background:white;
 
 color:#ff4b6e;
-
-cursor:pointer;
 
 box-shadow:0 10px 25px rgba(0,0,0,.2);
 
@@ -106,8 +103,7 @@ transform:scale(1.1);
 
 
 
-/* Cute Bear */
-
+/* Bear */
 
 .bear{
 
@@ -115,18 +111,10 @@ font-size:100px;
 
 animation:bounce 2s infinite;
 
-position:relative;
-
 }
 
 
 @keyframes bounce{
-
-0%,100%{
-
-transform:translateY(0);
-
-}
 
 50%{
 
@@ -138,7 +126,8 @@ transform:translateY(-20px);
 
 
 
-/* Hearts */
+
+/* Floating Hearts */
 
 
 .heart{
@@ -149,13 +138,12 @@ bottom:-50px;
 
 font-size:25px;
 
-animation:heartFloat 8s linear infinite;
+animation:float 8s linear infinite;
 
 }
 
 
-@keyframes heartFloat{
-
+@keyframes float{
 
 100%{
 
@@ -167,7 +155,7 @@ transform:translateY(-120vh) rotate(360deg);
 
 
 
-/* Rose */
+/* Rose Petals */
 
 
 .petal{
@@ -184,7 +172,6 @@ animation:fall 8s linear infinite;
 
 
 @keyframes fall{
-
 
 100%{
 
@@ -203,8 +190,6 @@ transform:translateY(120vh) rotate(360deg);
 
 position:absolute;
 
-color:white;
-
 font-size:25px;
 
 animation:shine 2s infinite;
@@ -216,21 +201,14 @@ animation:shine 2s infinite;
 
 50%{
 
-opacity:0;
+opacity:.2;
 
-transform:scale(.5);
-
-}
-
-100%{
-
-opacity:1;
-
-transform:scale(1);
+transform:scale(1.5);
 
 }
 
 }
+
 
 
 
@@ -269,9 +247,9 @@ padding:30px;
 
 border-radius:25px;
 
-font-size:18px;
-
 line-height:1.8;
+
+font-size:17px;
 
 color:#555;
 
@@ -280,44 +258,6 @@ box-shadow:0 15px 40px rgba(0,0,0,.2);
 }
 
 
-
-/* Final */
-
-
-.final{
-
-font-size:42px;
-
-color:white;
-
-}
-
-
-
-@media(max-width:600px){
-
-h1{
-
-font-size:28px;
-
-}
-
-
-.bear{
-
-font-size:80px;
-
-}
-
-
-.final{
-
-font-size:30px;
-
-}
-
-
-}
 
 </style>
 
@@ -329,15 +269,14 @@ font-size:30px;
 
 <!-- Decorations -->
 
+
 <div class="heart" style="left:10%">❤️</div>
 <div class="heart" style="left:30%;animation-delay:2s">💖</div>
 <div class="heart" style="left:50%;animation-delay:4s">💕</div>
-<div class="heart" style="left:70%;animation-delay:1s">❤️</div>
 
 
 <div class="petal" style="left:20%">🌹</div>
-<div class="petal" style="left:60%;animation-delay:3s">🌹</div>
-<div class="petal" style="left:85%;animation-delay:1s">🌹</div>
+<div class="petal" style="left:70%;animation-delay:3s">🌹</div>
 
 
 <div class="sparkle" style="top:20%;left:20%">✨</div>
@@ -345,19 +284,24 @@ font-size:30px;
 
 
 
-<!-- Intro -->
+
+<!-- Intro Screen -->
 
 
 <div class="screen" id="intro">
 
 
 <div class="bear">
+
 🧸
+
 </div>
 
 
 <h1>
+
 A little surprise is waiting for Charlotte... ❤️
+
 </h1>
 
 
@@ -369,8 +313,7 @@ Start Surprise 💝
 
 
 </div>
-<!-- Love Question Page -->
-
+<!-- Question Screen -->
 
 <div class="screen hidden" id="questionPage">
 
@@ -382,8 +325,6 @@ Do You Love Me, Charlotte? ❤️
 </h1>
 
 
-<div>
-
 
 <button id="yesBtn" onclick="yesClick()">
 
@@ -392,7 +333,8 @@ YES ❤️
 </button>
 
 
-<button id="noBtn">
+
+<button id="noBtn" onclick="noClick()">
 
 NO 😢
 
@@ -402,13 +344,11 @@ NO 😢
 </div>
 
 
-</div>
 
 
 
 
-
-<!-- Love Letter Page -->
+<!-- Love Letter Screen -->
 
 
 <div class="screen hidden" id="letterPage">
@@ -421,58 +361,43 @@ For My Dearest Charlotte 🌹
 </h1>
 
 
+
 <div class="letter">
 
 
 <p>
 
-
 My Dearest Charlotte (My Love),
 
 <br><br>
 
-
 Happy National Girlfriend Day! ❤️
 
-
 <br><br>
-
 
 From the moment you came into my life, everything became brighter.
 
-
 <br><br>
-
 
 Thank you for making my life brighter and filling my heart with a love I never knew I needed.
 
-
 <br><br>
-
 
 You are my peace, my happiness, and the most beautiful part of my life.
 
-
 <br><br>
-
 
 No matter where life takes us, my heart will always choose you.
 
-
 <br><br>
-
 
 Every day with you is my favorite day, and every moment with you is a memory I'll always treasure.
 
-
 <br><br>
-
 
 I love you today, tomorrow, and forever.
 
-
 <br><br>
-
 
 Forever yours,
 
@@ -480,24 +405,29 @@ Forever yours,
 
 ❤️
 
-
 </p>
 
 
-</div>
+<button onclick="continueLove()">
+
+I Read Your Letter ❤️
+
+</button>
 
 
 </div>
 
 
+</div>
 
 
 
 
-<!-- Confetti Container -->
+
+<!-- Confetti -->
 
 
-<div id="confetti"></div>
+<div id="confettiBox"></div>
 
 
 
@@ -523,8 +453,6 @@ animation:explode 2s forwards;
 
 transform:translate(0,0);
 
-opacity:1;
-
 }
 
 
@@ -545,7 +473,6 @@ opacity:0;
 
 
 
-
 <script>
 
 
@@ -554,7 +481,6 @@ function startLove(){
 
 document.getElementById("intro")
 .classList.add("hidden");
-
 
 
 document.getElementById("questionPage")
@@ -567,33 +493,39 @@ document.getElementById("questionPage")
 
 
 
-// NO Button Escape
+// No Button Effect
 
 
-let noBtn=document.getElementById("noBtn");
+let yesScale = 20;
 
 
-noBtn.addEventListener("mouseover",moveNo);
-
-noBtn.addEventListener("touchstart",moveNo);
+function noClick(){
 
 
-
-function moveNo(){
-
-
-let x=Math.random()*
-(window.innerWidth-120);
-
-
-let y=Math.random()*
-(window.innerHeight-80);
+yesScale += 10;
 
 
 
-noBtn.style.left=x+"px";
+let yes=document.getElementById("yesBtn");
 
-noBtn.style.top=y+"px";
+
+yes.style.fontSize=yesScale+"px";
+
+
+yes.style.padding=
+(yesScale/2)+"px "+yesScale+"px";
+
+
+
+let no=document.getElementById("noBtn");
+
+
+no.style.left =
+Math.random()*(window.innerWidth-100)+"px";
+
+
+no.style.top =
+Math.random()*(window.innerHeight-80)+"px";
 
 
 }
@@ -602,30 +534,13 @@ noBtn.style.top=y+"px";
 
 
 
-// YES Button
-
-
-let yesSize=20;
-
+// Yes Button
 
 
 function yesClick(){
 
 
-yesSize+=8;
-
-
-
-document.getElementById("yesBtn")
-.style.fontSize=yesSize+"px";
-
-
-
 createConfetti();
-
-
-
-if(yesSize>=60){
 
 
 
@@ -638,86 +553,96 @@ document.getElementById("letterPage")
 .classList.remove("hidden");
 
 
-
-}
-
-
-
 }
 
 
 
 
 
-// Confetti Effect
+// Confetti Function
 
 
 function createConfetti(){
 
 
-for(let i=0;i<30;i++){
+for(let i=0;i<40;i++){
 
 
-let c=document.createElement("div");
+let item=document.createElement("div");
 
 
-c.innerHTML="🎉";
+item.innerHTML="🎉";
+
+item.className="confetti";
 
 
-c.className="confetti";
+item.style.left="50%";
+
+item.style.top="50%";
 
 
-c.style.left="50%";
-
-c.style.top="50%";
-
-
-c.style.setProperty(
+item.style.setProperty(
 "--x",
-(Math.random()*500-250)+"px"
+Math.random()*600-300+"px"
 );
 
 
-c.style.setProperty(
+item.style.setProperty(
 "--y",
-(Math.random()*500-250)+"px"
+Math.random()*600-300+"px"
 );
 
 
 
-document.body.appendChild(c);
+document.body.appendChild(item);
 
 
 
 setTimeout(()=>{
 
-c.remove();
+item.remove();
 
 },2000);
 
 
-
 }
 
 
 }
 
 
-    </script>
-    <!-- Final Surprise Page -->
 
+
+
+// Continue Button
+
+
+function continueLove(){
+
+
+document.getElementById("letterPage")
+.classList.add("hidden");
+
+
+document.getElementById("finalPage")
+.classList.remove("hidden");
+
+
+}
+
+
+</script>
+<!-- Final Surprise Page -->
 
 <div class="screen hidden" id="finalPage">
 
 
-<div class="gift">
-
+<div style="font-size:90px;animation:bounce 1.5s infinite;">
 🎁
-
 </div>
 
 
-<h1 class="final">
+<h1>
 
 Happy National Girlfriend Day,
 <br>
@@ -726,10 +651,9 @@ Charlotte ❤️
 </h1>
 
 
-
 <p style="color:white;font-size:20px;margin-top:20px;">
 
-You are my favorite person and my sweetest surprise 💕
+Thank you for being the most special person in my life 💕
 
 </p>
 
@@ -743,13 +667,10 @@ You are my favorite person and my sweetest surprise 💕
 
 
 
-<!-- QR Code Area -->
-
-
 <div class="qrBox">
 
 
-<div class="heartQR">
+<div style="font-size:50px;">
 
 ❤️
 
@@ -758,7 +679,7 @@ You are my favorite person and my sweetest surprise 💕
 
 <p>
 
-Scan My Heart 💌
+Heart QR Code Coming Soon 💌
 
 </p>
 
@@ -773,67 +694,26 @@ Scan My Heart 💌
 
 
 
-
 <style>
-
-
-/* Gift Animation */
-
-
-.gift{
-
-font-size:90px;
-
-animation:giftBounce 1.5s infinite;
-
-}
-
-
-
-@keyframes giftBounce{
-
-
-50%{
-
-transform:translateY(-25px)
-rotate(5deg);
-
-}
-
-
-}
-
-
-
-
-
-/* QR Placeholder */
 
 
 .qrBox{
 
-margin-top:40px;
-
 background:white;
 
-padding:15px 30px;
+padding:20px 35px;
 
 border-radius:20px;
+
+margin-top:35px;
 
 color:#ff4b6e;
 
 font-size:18px;
 
-}
-
-
-
-.heartQR{
-
-font-size:50px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
 
 }
-
 
 
 
@@ -844,38 +724,6 @@ font-size:50px;
 
 
 <script>
-
-
-// Move to final page after letter
-
-
-setTimeout(()=>{
-
-
-let letter=document.getElementById("letterPage");
-
-
-if(!letter.classList.contains("hidden")){
-
-
-letter.classList.add("hidden");
-
-
-document.getElementById("finalPage")
-.classList.remove("hidden");
-
-
-}
-
-
-},30000);
-
-
-
-
-
-
-// YouTube Music
 
 
 function playSong(){
@@ -894,4 +742,4 @@ window.open(
 
 
 
-                     </script>
+</script>
