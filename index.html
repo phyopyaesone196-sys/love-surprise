@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Do You Love Me?</title>
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#ffdde1;
+text-align:center;
+padding-top:80px;
+overflow:hidden;
+}
+h1{
+color:#d1005b;
+font-size:40px;
+}
+button{
+font-size:24px;
+padding:12px 28px;
+margin:20px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+}
+#yes{
+background:#ff2d55;
+color:white;
+}
+#no{
+background:#666;
+color:white;
+position:absolute;
+}
+</style>
+</head>
+<body>
+
+<h1>❤️ Do You Love Me? ❤️</h1>
+
+<button id="yes" onclick="yes()">Yes</button>
+<button id="no" onclick="moveNo()">No</button>
+
+<script>
+let size=24;
+
+function moveNo(){
+let no=document.getElementById("no");
+no.style.left=Math.random()*(window.innerWidth-120)+"px";
+no.style.top=Math.random()*(window.innerHeight-80)+"px";
+
+size+=8;
+document.getElementById("yes").style.fontSize=size+"px";
+}
+
+function yes(){
+document.body.innerHTML="<h1 style='color:red'>❤️ Happy National Girlfriend Day ❤️<br>I Love You Forever! 💖</h1>";
+}
+</script>
+
+</body>
+</html>
