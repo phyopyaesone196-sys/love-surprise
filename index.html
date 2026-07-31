@@ -8,58 +8,41 @@
 
 <title>For Charlotte ❤️</title>
 
+
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
 }
+
 
 body{
-    overflow:hidden;
-    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-    height:100vh;
-}
 
-
-/* Floating Hearts */
-
-.heart{
-    position:absolute;
-    bottom:-50px;
-    color:white;
-    font-size:25px;
-    animation:float 8s linear infinite;
-    opacity:0.8;
-}
-
-@keyframes float{
-
-0%{
-    transform:translateY(0) rotate(0deg);
-}
-
-100%{
-    transform:translateY(-120vh) rotate(360deg);
-}
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
 
 }
 
 
-/* Screens */
+/* Screen */
 
 .screen{
 
-height:100vh;
+position:absolute;
 width:100%;
+height:100vh;
+
 display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
+
 text-align:center;
-position:absolute;
+
 transition:1s;
 
 }
@@ -69,34 +52,48 @@ transition:1s;
 
 opacity:0;
 pointer-events:none;
-transform:scale(0.8);
+transform:scale(.7);
 
 }
 
 
-/* Intro */
+
+/* Text */
+
 
 h1{
 
 color:white;
-font-size:35px;
-margin-bottom:30px;
+font-size:38px;
+text-shadow:0 5px 20px rgba(0,0,0,.2);
 
 }
 
 
+/* Buttons */
+
+
 button{
 
-border:none;
-padding:15px 35px;
-border-radius:50px;
-font-size:20px;
-cursor:pointer;
-background:white;
-color:#ff4b6e;
-box-shadow:0 5px 20px rgba(0,0,0,0.2);
+margin-top:30px;
 
-transition:0.3s;
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:20px;
+
+background:white;
+
+color:#ff4b6e;
+
+cursor:pointer;
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+transition:.3s;
 
 }
 
@@ -108,139 +105,108 @@ transform:scale(1.1);
 }
 
 
-/* Love Question */
+
+/* Cute Bear */
 
 
-#question{
+.bear{
 
-font-size:38px;
+font-size:100px;
 
-}
+animation:bounce 2s infinite;
 
-
-#buttons{
-
-margin-top:40px;
-display:flex;
-gap:30px;
+position:relative;
 
 }
 
 
-#yesBtn{
+@keyframes bounce{
 
-background:#ff4b6e;
-color:white;
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-20px);
+
+}
 
 }
 
 
-#noBtn{
 
-background:white;
+/* Hearts */
+
+
+.heart{
+
 position:absolute;
 
-}
+bottom:-50px;
 
+font-size:25px;
 
-/* Letter */
-
-.letter{
-
-background:white;
-width:90%;
-max-width:600px;
-padding:30px;
-border-radius:25px;
-box-shadow:0 10px 40px rgba(0,0,0,0.2);
-
-font-size:18px;
-line-height:1.7;
-color:#555;
+animation:heartFloat 8s linear infinite;
 
 }
 
 
-.title{
+@keyframes heartFloat{
 
-font-size:35px;
-color:white;
-margin-bottom:20px;
+
+100%{
+
+transform:translateY(-120vh) rotate(360deg);
+
+}
 
 }
 
 
-/* Final */
 
-.finalText{
+/* Rose */
 
-font-size:40px;
-color:white;
-
-}
-
-
-#musicBtn{
-
-margin-top:30px;
-
-}
-
-
-@media(max-width:600px){
-
-h1{
-font-size:28px;
-}
-
-
-#question{
-font-size:30px;
-}
-
-
-.finalText{
-font-size:32px;
-}
-
-
-.letter{
-font-size:16px;
-}
-
-}
-
-</style>
-/* Rose Petals */
 
 .petal{
-    position:absolute;
-    top:-50px;
-    font-size:25px;
-    animation:fall 8s linear infinite;
-    opacity:0.8;
+
+position:absolute;
+
+top:-50px;
+
+font-size:25px;
+
+animation:fall 8s linear infinite;
+
 }
+
 
 @keyframes fall{
 
-0%{
-    transform:translateY(0) rotate(0deg);
-}
 
 100%{
-    transform:translateY(110vh) rotate(360deg);
-}
+
+transform:translateY(120vh) rotate(360deg);
 
 }
 
+}
 
-/* Sparkles */
+
+
+/* Sparkle */
+
 
 .sparkle{
 
 position:absolute;
+
 color:white;
-font-size:20px;
+
+font-size:25px;
+
 animation:shine 2s infinite;
 
 }
@@ -248,131 +214,265 @@ animation:shine 2s infinite;
 
 @keyframes shine{
 
-0%,100%{
-opacity:0;
-transform:scale(0.5);
-}
-
 50%{
+
+opacity:0;
+
+transform:scale(.5);
+
+}
+
+100%{
+
 opacity:1;
-transform:scale(1.5);
+
+transform:scale(1);
+
 }
 
 }
+
+
+
+/* Question */
+
+
+#noBtn{
+
+position:absolute;
+
+}
+
+
+#yesBtn{
+
+background:#ff4b6e;
+
+color:white;
+
+}
+
+
+
+/* Letter */
+
+
+.letter{
+
+background:white;
+
+width:90%;
+
+max-width:600px;
+
+padding:30px;
+
+border-radius:25px;
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#555;
+
+box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+}
+
+
+
+/* Final */
+
+
+.final{
+
+font-size:42px;
+
+color:white;
+
+}
+
+
+
+@media(max-width:600px){
+
+h1{
+
+font-size:28px;
+
+}
+
+
+.bear{
+
+font-size:80px;
+
+}
+
+
+.final{
+
+font-size:30px;
+
+}
+
+
+}
+
+</style>
+
 </head>
 
 
 <body>
-<!-- Rose Petals -->
-
-<div class="petal" style="left:15%;animation-delay:0s;">🌹</div>
-<div class="petal" style="left:35%;animation-delay:2s;">🌹</div>
-<div class="petal" style="left:55%;animation-delay:4s;">🌹</div>
-<div class="petal" style="left:75%;animation-delay:1s;">🌹</div>
-<div class="petal" style="left:90%;animation-delay:3s;">🌹</div>
 
 
-<!-- Sparkles -->
+<!-- Decorations -->
 
-<div class="sparkle" style="top:20%;left:20%;">✨</div>
-<div class="sparkle" style="top:40%;left:80%;">✨</div>
-<div class="sparkle" style="top:70%;left:30%;">✨</div>
-<div class="sparkle" style="top:60%;left:70%;">✨</div>
-
-<!-- Floating Hearts -->
-
-<div class="heart" style="left:10%;animation-delay:0s;">❤️</div>
-<div class="heart" style="left:30%;animation-delay:2s;">💖</div>
-<div class="heart" style="left:50%;animation-delay:4s;">💕</div>
-<div class="heart" style="left:70%;animation-delay:1s;">❤️</div>
-<div class="heart" style="left:90%;animation-delay:3s;">💗</div>
+<div class="heart" style="left:10%">❤️</div>
+<div class="heart" style="left:30%;animation-delay:2s">💖</div>
+<div class="heart" style="left:50%;animation-delay:4s">💕</div>
+<div class="heart" style="left:70%;animation-delay:1s">❤️</div>
 
 
-<!-- Intro Screen -->
+<div class="petal" style="left:20%">🌹</div>
+<div class="petal" style="left:60%;animation-delay:3s">🌹</div>
+<div class="petal" style="left:85%;animation-delay:1s">🌹</div>
+
+
+<div class="sparkle" style="top:20%;left:20%">✨</div>
+<div class="sparkle" style="top:70%;left:80%">✨</div>
+
+
+
+<!-- Intro -->
+
 
 <div class="screen" id="intro">
+
+
+<div class="bear">
+🧸
+</div>
+
 
 <h1>
 A little surprise is waiting for Charlotte... ❤️
 </h1>
 
+
 <button onclick="startLove()">
+
 Start Surprise 💝
+
 </button>
 
+
 </div>
-<!-- Love Question Screen -->
+<!-- Love Question Page -->
+
 
 <div class="screen hidden" id="questionPage">
 
-<h1 id="question">
+
+<h1>
+
 Do You Love Me, Charlotte? ❤️
+
 </h1>
 
 
-<div id="buttons">
+<div>
+
 
 <button id="yesBtn" onclick="yesClick()">
+
 YES ❤️
+
 </button>
 
 
 <button id="noBtn">
+
 NO 😢
+
 </button>
 
 
 </div>
 
+
 </div>
 
 
 
-<!-- Love Letter Screen -->
+
+
+<!-- Love Letter Page -->
+
 
 <div class="screen hidden" id="letterPage">
 
 
-<div class="title">
+<h1>
+
 For My Dearest Charlotte 🌹
-</div>
+
+</h1>
 
 
 <div class="letter">
 
+
 <p>
+
 
 My Dearest Charlotte (My Love),
 
 <br><br>
 
+
 Happy National Girlfriend Day! ❤️
 
+
 <br><br>
+
 
 From the moment you came into my life, everything became brighter.
 
+
 <br><br>
+
 
 Thank you for making my life brighter and filling my heart with a love I never knew I needed.
 
+
 <br><br>
+
 
 You are my peace, my happiness, and the most beautiful part of my life.
 
+
 <br><br>
+
 
 No matter where life takes us, my heart will always choose you.
 
+
 <br><br>
+
 
 Every day with you is my favorite day, and every moment with you is a memory I'll always treasure.
 
+
 <br><br>
+
 
 I love you today, tomorrow, and forever.
 
+
 <br><br>
+
 
 Forever yours,
 
@@ -380,49 +480,68 @@ Forever yours,
 
 ❤️
 
+
 </p>
 
-</div>
-
 
 </div>
-
-
-
-
-<!-- Final Screen -->
-
-
-<div class="screen hidden" id="finalPage">
-
-
-<div class="finalText">
-
-Happy National Girlfriend Day,
-<br>
-Charlotte ❤️
-
-</div>
-
-
-<button id="musicBtn" onclick="playSong()">
-
-🎵 Play Our Song
-
-</button>
 
 
 </div>
 
 
 
-<!-- Music -->
 
-<audio id="song">
 
-<source src="Until-I-Foumd-You.mp3" type="audio/mpeg">
 
-</audio>
+<!-- Confetti Container -->
+
+
+<div id="confetti"></div>
+
+
+
+<style>
+
+
+.confetti{
+
+position:absolute;
+
+font-size:25px;
+
+animation:explode 2s forwards;
+
+}
+
+
+
+@keyframes explode{
+
+
+0%{
+
+transform:translate(0,0);
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:translate(var(--x),var(--y));
+
+opacity:0;
+
+}
+
+
+}
+
+
+</style>
+
 
 
 
@@ -432,19 +551,23 @@ Charlotte ❤️
 
 function startLove(){
 
+
 document.getElementById("intro")
 .classList.add("hidden");
 
 
+
 document.getElementById("questionPage")
 .classList.remove("hidden");
+
 
 }
 
 
 
 
-// No Button Run Away
+
+// NO Button Escape
 
 
 let noBtn=document.getElementById("noBtn");
@@ -458,44 +581,52 @@ noBtn.addEventListener("touchstart",moveNo);
 
 function moveNo(){
 
+
 let x=Math.random()*
 (window.innerWidth-120);
 
+
 let y=Math.random()*
 (window.innerHeight-80);
+
 
 
 noBtn.style.left=x+"px";
 
 noBtn.style.top=y+"px";
 
+
 }
 
 
 
 
-// Yes Button
+
+// YES Button
 
 
-let size=20;
+let yesSize=20;
+
 
 
 function yesClick(){
 
 
-size+=10;
+yesSize+=8;
+
 
 
 document.getElementById("yesBtn")
-.style.fontSize=size+"px";
-
-
-document.getElementById("yesBtn")
-.style.padding=(size/2)+"px "+size+"px";
+.style.fontSize=yesSize+"px";
 
 
 
-if(size>=60){
+createConfetti();
+
+
+
+if(yesSize>=60){
+
 
 
 document.getElementById("questionPage")
@@ -507,44 +638,260 @@ document.getElementById("letterPage")
 .classList.remove("hidden");
 
 
+
+}
+
+
+
+}
+
+
+
+
+
+// Confetti Effect
+
+
+function createConfetti(){
+
+
+for(let i=0;i<30;i++){
+
+
+let c=document.createElement("div");
+
+
+c.innerHTML="🎉";
+
+
+c.className="confetti";
+
+
+c.style.left="50%";
+
+c.style.top="50%";
+
+
+c.style.setProperty(
+"--x",
+(Math.random()*500-250)+"px"
+);
+
+
+c.style.setProperty(
+"--y",
+(Math.random()*500-250)+"px"
+);
+
+
+
+document.body.appendChild(c);
+
+
+
+setTimeout(()=>{
+
+c.remove();
+
+},2000);
+
+
+
+}
+
+
+}
+
+
+    </script>
+    <!-- Final Surprise Page -->
+
+
+<div class="screen hidden" id="finalPage">
+
+
+<div class="gift">
+
+🎁
+
+</div>
+
+
+<h1 class="final">
+
+Happy National Girlfriend Day,
+<br>
+Charlotte ❤️
+
+</h1>
+
+
+
+<p style="color:white;font-size:20px;margin-top:20px;">
+
+You are my favorite person and my sweetest surprise 💕
+
+</p>
+
+
+
+<button onclick="playSong()">
+
+🎵 Play Our Song
+
+</button>
+
+
+
+<!-- QR Code Area -->
+
+
+<div class="qrBox">
+
+
+<div class="heartQR">
+
+❤️
+
+</div>
+
+
+<p>
+
+Scan My Heart 💌
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<style>
+
+
+/* Gift Animation */
+
+
+.gift{
+
+font-size:90px;
+
+animation:giftBounce 1.5s infinite;
+
+}
+
+
+
+@keyframes giftBounce{
+
+
+50%{
+
+transform:translateY(-25px)
+rotate(5deg);
+
+}
+
+
+}
+
+
+
+
+
+/* QR Placeholder */
+
+
+.qrBox{
+
+margin-top:40px;
+
+background:white;
+
+padding:15px 30px;
+
+border-radius:20px;
+
+color:#ff4b6e;
+
+font-size:18px;
+
+}
+
+
+
+.heartQR{
+
+font-size:50px;
+
+}
+
+
+
+
+</style>
+
+
+
+
+
+<script>
+
+
+// Move to final page after letter
+
+
 setTimeout(()=>{
 
 
-document.getElementById("letterPage")
-.classList.add("hidden");
+let letter=document.getElementById("letterPage");
+
+
+if(!letter.classList.contains("hidden")){
+
+
+letter.classList.add("hidden");
 
 
 document.getElementById("finalPage")
 .classList.remove("hidden");
 
 
+}
+
+
 },30000);
 
 
-}
-
-
-}
 
 
 
 
-// Music Button
+// YouTube Music
 
 
 function playSong(){
 
+
 window.open(
+
 "https://www.youtube.com/results?search_query=Until+I+Found+You+Stephen+Sanchez",
+
 "_blank"
+
 );
+
 
 }
 
 
-</script>
 
-
-</body>
-
-</html>
+                     </script>
